@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+    <script type="text/javascript">
+        function validate(){
+            var em=document.getElementById("email").value.indexOf("@");
+            var age=document.getElementById("age").value;
+            var fname=document.getElementById("fname").value;
+            submitOk="true";
+            if(fname.length>15){
+                alert("the name should have less than 15 characters");
+                submitOk="false";
+            }
+            if(isNaN(age)||age<1||age>100){
+                alert("the age must be a number between 1 and 100");
+                submitOk="false";
+            }
+            if(em==-1){
+                alert("email id is not valid");
+                submitOk="false";
+            }
+            if(submitOk=="false"){
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="tryjs_submitpage.html"onsubmit="return validate()">
+    Name(max 15 char):<input type="text" id="fname" size="15"><br/>
+    Age:<input type="text" id="age" size="20"><br/>
+    E-mail:<input type="email" id="email" size="20"><br/>
+    <input type="submit" value="Submit">
+
+</form>
+</body>
+</html>
